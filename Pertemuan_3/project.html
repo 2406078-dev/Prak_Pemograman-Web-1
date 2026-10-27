@@ -21,40 +21,71 @@
     <hr>
     <main>
         <section id="daftar-proyek">
-            <h2>Proyek yang Pernah Dikerjakan</h2>
+    <h2>Proyek yang Pernah Dikerjakan</h2>
 
-            <article>
-                <header>
-                    <h3>1. Sistem Manajemen Inventori Database</h3>
-                    <p>Teknologi: HTML, CSS, JavaScript, MySQL | Tahun: <time datetime="2026">2026</time></p>
-                </header>
-                <p>Aplikasi web berbasis lokal untuk mencatat dan mengelola sirkulasi barang secara efisien, terintegrasi dengan database MySQL.</p>
-            </article>
+    <!-- Fitur 1: Form Input Proyek -->
+    <form id="form-proyek">
+        <p>
+            <label for="judul-proyek">Judul Proyek:</label><br>
+            <input type="text" id="judul-proyek" name="judul-proyek" placeholder="Contoh: Aplikasi Kasir">
+            <span id="error-judul" class="error-msg" style="display:none;"></span>
+        </p>
+        <p>
+            <label for="kategori-proyek">Kategori:</label><br>
+            <select id="kategori-proyek" name="kategori-proyek">
+                <option value="Web App">Web App</option>
+                <option value="Mobile App">Mobile App</option>
+                <option value="Desktop App">Desktop App</option>
+                <option value="UI/UX Design">UI/UX Design</option>
+            </select>
+        </p>
+        <p>
+            <label for="anggaran-proyek">Estimasi Anggaran (Rp):</label><br>
+            <input type="number" id="anggaran-proyek" name="anggaran-proyek" placeholder="Contoh: 5000000">
+            <span id="error-anggaran" class="error-msg" style="display:none;"></span>
+        </p>
+        <p>
+            <label class="label-checkbox">
+                <input type="checkbox" id="status-proyek" name="status-proyek">
+                Sudah Selesai
+            </label>
+        </p>
+        <p>
+            <button type="submit">Tambah Proyek</button>
+        </p>
+    </form>
 
-            <article>
-                <header>
-                    <h3>2. Aplikasi Kasir &amp; Perhitungan Transaksi</h3>
-                    <p>Teknologi: JavaScript ES6+ | Tahun: <time datetime="2026">2026</time></p>
-                </header>
-                <p>Program logika pemrosesan transaksi belanja yang menghitung total bayar dan diskon berbasis Array of Objects.</p>
-            </article>
+    <hr style="display:block; margin:25px 0; border:1px dashed #cbd5e1;">
 
-            <article>
-                <header>
-                    <h3>3. Website Portofolio Pribadi</h3>
-                    <p>Teknologi: HTML Semantik | Tahun: <time datetime="2026">2026</time></p>
-                </header>
-                <p>Website portofolio multi-halaman yang menampilkan profil, resume, daftar proyek, dan formulir kontak.</p>
-            </article>
+    <!-- Fitur 2: Live Search -->
+    <p>
+        <label for="cari-proyek">Cari Proyek:</label><br>
+        <input type="text" id="cari-proyek" placeholder="Ketik nama proyek...">
+    </p>
 
-            <article>
-                <header>
-                    <h3>4. Formulir Kontak Interaktif</h3>
-                    <p>Teknologi: HTML Form | Tahun: <time datetime="2026">2026</time></p>
-                </header>
-                <p>Halaman kontak dengan input teks, email, dropdown layanan, dan textarea untuk menerima pesan atau penawaran proyek.</p>
-            </article>
-        </section>
+    <!-- Kartu Statistik -->
+    <div class="stat-grid" id="statistik-proyek">
+        <div class="stat-card">
+            <span class="stat-angka" id="stat-total">0</span>
+            <span class="stat-label">Total Proyek</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-angka" id="stat-selesai">0</span>
+            <span class="stat-label">Selesai</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-angka" id="stat-proses">0</span>
+            <span class="stat-label">Dalam Pengerjaan</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-angka" id="stat-anggaran">Rp 0</span>
+            <span class="stat-label">Total Anggaran</span>
+        </div>
+    </div>
+
+    <!-- Container hasil render -->
+    <div id="daftar-kartu-proyek" style="margin-top:25px;"></div>
+</section>
         <hr>
     </main>
     <aside>
@@ -64,6 +95,7 @@
     <hr>
     <footer>
         <p>&copy; Muhammad Ihsan Ali - Teknik Informatika.</p>
+        <script src="script.js"></script>
     </footer>
 </body>
 </html>
